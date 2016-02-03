@@ -1,3 +1,6 @@
+html, body{
+	height: 100%;
+}
 footer{
 	position:fixed;
 	left:0px;
@@ -7,11 +10,22 @@ footer{
 	/*background-color: lightgrey;*/
 }
 
+.content{
+	padding:0;
+    overflow: scroll; 
+    overflow-x:hidden;
+    height:100%
+}
+
 #the_page{
-	position: fixed;
-	left: 0;
-	top: 0;
-	margin-left: 2%;
+	margin: 0;
+    padding: 0;
+    height: 76%;
+    max-height: 76%;
+    width: 100%;
+    display: block; 
+    border:solid #000 1px;
+    overflow: scroll;
 }
 
 .input {
@@ -20,7 +34,7 @@ footer{
 	display: inline-block;
 	margin: 1em;
 	padding-left: 1.5%;
-	max-width: 75%;
+	max-width: 90%;
 	width: calc(100% - 2em);
 	vertical-align: top;
 }
