@@ -1,0 +1,44 @@
+<html>
+	<body>
+		<input id='my_input' value=''>
+		<div id = "test" style="position:absolute;visibility:hidden;height:auto;width:auto;withe-space:nowrap;"></div>
+		</input>
+		<div>-</div>
+		<div id='my_bar' style="max-width:90%"></div>
+
+
+		<script>
+			var mInput = document.getElementById('my_input');
+			mInput.style['width'] = '50%';
+			mInput.addEventListener('focus', function(event){
+				isAnimating = true;
+				detectChange(mInput);
+			});
+			mInput.addEventListener('focusout', function(event){
+				isAnimating = false;
+			});
+
+			var mBar = document.getElementById('my_bar');
+			mBar.style['width'] = '0%';
+			mBar.style['height'] = '10px';
+			mBar.style['background'] = 'mediumspringgreen';
+
+			var detectChange = function(){
+				if(isAnimating){
+					window.requestAnimationFrame(detectChange);
+				}
+				var theNumberOfCharacters = mInput.value.length;
+				var theNumberOfWords = mInput.value.split(' ').length;
+
+				// **OG CODE**
+				var newWidth = theNumberOfCharacters; 
+				 // != 0 && theNumberOfWords>0 ? 0+(theNumberOfWords)*10 : 0 **add into above line to exapnd bar on words only
+				// mInput.style['width'] = newWidth.toString()+'px';
+				mBar.style['width'] = newWidth.toString()+'%';
+				// **END OG CODE**	
+
+			};
+			var isAnimating=false;
+		</script>
+	</body>
+</html>
