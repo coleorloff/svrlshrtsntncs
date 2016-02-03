@@ -1,8 +1,19 @@
-#print_here{
-	border: solid;
-	border-radius: 2px;
-	border-color: black;
+footer{
+	position:fixed;
+	left:0px;
+	bottom:0px;
+	height:200px;
+	width:100%;
+	/*background-color: lightgrey;*/
 }
+
+#the_page{
+	position: fixed;
+	left: 0;
+	top: 0;
+	margin-left: 2%;
+}
+
 .input {
 	position: relative;
 	z-index: 1;
