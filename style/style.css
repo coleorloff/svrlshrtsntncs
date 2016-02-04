@@ -63,7 +63,7 @@ footer{
 	z-index: 1;
 	display: inline-block;
 	margin-top: 1em;
-	padding-left: 1.5%;
+	padding-left: 1em;
 	height: 2em;
 	max-width: 90%;
 	width: calc(100% - 2em);
@@ -74,7 +74,7 @@ footer{
 	position: relative;
 	display: block;
 	float: right;
-	padding: 0.8em;
+	/*padding: 0.8em;*/
 	width: 60%;
 	border: none;
 	border-radius: 0;
@@ -112,6 +112,8 @@ footer{
 
 #my_bar{
 	position: relative;
+	display: block;
+	margin-left: 1em;
 	width:0px;
 	height:5px;
 	background: mediumspringgreen;
