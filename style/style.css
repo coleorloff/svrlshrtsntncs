@@ -51,9 +51,8 @@ footer{
 
 #the_page{
 	margin: 0;
-    padding-left: 2%;
-    height: 85%;
-    max-height: 85%;
+    padding-left: 2%; 
+	max-height: 85%;
     width: 100%;
     display: block; 
     overflow: scroll;
@@ -120,3 +119,66 @@ footer{
 	height:5px;
 	background: mediumspringgreen;
 }
+
+
+
+/* New Document Icon  - Thanks to Josh Hibbert - http://joshnh.com/weblog/pure-css-icons/*/
+
+a.icon {
+    margin: 12px;
+}
+
+a.icon {
+    background-color: #fed;
+    border: 2px solid #fc6;
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+}
+a.icon:after,
+a.icon:before {
+    background: #fed;
+    border: 2px solid #fc6;
+    content: '';
+    position: absolute;
+}
+a.icon:hover,
+a.icon:hover:after,
+a.icon:hover:before {
+    background-color: #ffe;
+}
+
+a.newDoc {
+    border-top: 2px solid #fc6;
+    box-shadow: inset 0 0 0 2px #fed;
+    height: 15px;
+    top: 10px;
+    width: 20px;
+}
+a.newDoc:hover {
+    box-shadow: inset 0 0 0 2px #ffe;
+}
+a.newDoc:after {
+    height: 10px;
+    right: 1px;
+    top: -9px;
+    width: 10px;
+    z-index: -1;
+    -webkit-transform: rotate(45deg);
+       -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+         -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+}
+a.newDoc:before {
+    border-bottom: none;
+    border-right: 2px solid #fc6;
+    height: 10px;
+    left: -2px;
+    top: -12px;
+    width: 11px;
+}
+
+/* END New Document Icon  - Thanks to Josh Hibbert - http://joshnh.com/weblog/pure-css-icons/*/
+
+

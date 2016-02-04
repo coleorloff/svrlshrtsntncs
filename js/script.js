@@ -3,6 +3,20 @@ var save_here = document.getElementById('save_here');
 var pArray = (save_here.childNodes);
 var ENTER = 13;
 
+var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth()+1;
+var yyyy = today.getFullYear();
+
+if(dd < 10){
+	dd ='0' + dd;
+}
+
+if (mm < 10){
+	mm = '0'+mm
+}
+
+today = mm + '/' + dd + '/' + yyyy;
 
 document.onkeypress = function(e){
 	if (e.keyCode == ENTER){
@@ -24,19 +38,37 @@ var newLine = function(){
 };
 
 var clearInput = function(){
-	console.log("clear input")
 	document.getElementById('text_input').value = "";
 };
 
 var checkP = function(){
 	//var pArray = (save_here.childNodes);
-	console.log(pArray);
 	console.log(pArray.length);
 };
 
-// window.onscroll = function(){
-// 	window.scrollBy(0, document.getElementsByClassName('line').height);
+// ***** Doesn't work yet: Hide badge when text_input has focus *****
+// var hideWelcome = function(){
+// 	console.log("checking...");
+// 	if (text_input.hasFocus){
+// 		console.log(document.activeElement);
+// 		document.getElementById('welcome').style.color = "blue";
+// 	}
 // };
+
+
+// ****** Download txt ***********
+document.getElementById('download').onclick = function (filename, mimeType){
+	var dText = save_here.textContent;
+	var dLink = document.createElement('a');
+	mimeType = mimeType || 'text/plain';
+	var filename = "svrlshrtsntncs" + "_" + today + '.txt';
+
+	dLink.setAttribute('download', filename);
+	dLink.setAttribute('href', 'data:' + mimeType + ';charset=utf-8,' + encodeURIComponent(dText));
+	dLink.click();
+}
+
+
 
 // ********** AV's Animated Bar *************
 
