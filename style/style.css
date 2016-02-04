@@ -14,12 +14,15 @@ footer{
 	bottom:0px;
 	margin-bottom: 1em;
 	padding-left: 2%;
-	height: 15%%;
+	height: 4em;
 	width: 100%;
 	/*background-color: lightgrey;*/
 }
 
 .line{
+	height: 1em;
+	margin-top: 1em;
+	margin-bottom: 1em;
 }
 
 .badge{
@@ -44,7 +47,6 @@ footer{
     overflow: scroll; 
     overflow-x:hidden;
     height:100%
-    asdf
 }
 
 #the_page{

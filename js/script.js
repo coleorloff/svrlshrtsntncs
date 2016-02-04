@@ -34,7 +34,11 @@ var checkP = function(){
 	console.log(pArray.length);
 };
 
-// for animated typing bar
+// window.onscroll = function(){
+// 	window.scrollBy(0, document.getElementsByClassName('line').height);
+// };
+
+// ********** AV's Animated Bar *************
 
 var mInput = document.getElementById('text_input');
 
@@ -65,27 +69,11 @@ var detectChange = function(){
 
 var isAnimating=false;
 
-// end animated typing bar
+// ********** END AV's Animated Bar *************
 
 
 
 
-// // selects which consecutive lines are selected to be displayed in save_here
-// var selectLines = function(currentTopNode){
-// 	var offSet = 16;
-// 	var top = currentTopNode;
-// 	var bottom = top+offSet;
-// 	var currentlySelected = pArray.slice(top, bottom);
 
-// 	return currentlySelected;
-// };
-
-// var displayLines = function(whatNodes){
-// 	var toDisplay = whatNodes;
-
-// 	for (var i = 0; i < currentlySelected.length; i++){
-// 		toDisplay[i].style.display = "";
-// 	}
-// };
 
 
