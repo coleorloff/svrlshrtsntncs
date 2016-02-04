@@ -1,0 +1,75 @@
+<!-- Example that grabs the length of the text and puts it into a hidden span, then does some magic and animates a bar.
+
+AV figured it out -->
+
+<html>
+	<body>
+		<!-- input -->
+		<input id='my_input' value='' autofocus></input> 
+		<div>-</div>
+		<!-- bar -->
+		<div id='my_bar'></div> 
+		<!-- hidden area to detect width of what you've typed, user will not see -->
+		<span id='my_ghost'></span> 
+
+		<style>
+		#my_input{
+			/* these two properties should be matched with #my_ghost */
+			font-family:helvetica, sans-serif;
+			font-size:11px; 
+
+			width:100vw;
+			border-style:none;
+		}
+		#my_input:focus{
+			outline:none; 
+		}
+		#my_bar{
+			width:0px;
+			height:5px;
+			background: mediumspringgreen;
+		}
+		#my_ghost{
+			/* these two properties should be matched with #my_input */
+			font-family:helvetica, sans-serif;
+			font-size:11px; 
+
+			position:absolute;
+			/*top:-9999px;*/
+			/* delete below lines when you un-comment above lines */
+			background:orange;
+			top:100px;
+		}
+		</style>
+
+
+		<script>
+			var mInput = document.getElementById('my_input');
+			mInput.addEventListener('focus', function(event){
+				isAnimating = true;
+				detectChange(mInput);
+			});
+			mInput.addEventListener('focusout', function(event){
+				isAnimating = false;
+			});
+
+			
+			var detectChange = function(){
+				if(isAnimating){
+					window.requestAnimationFrame(detectChange);
+				}
+				var mGhost = document.getElementById('my_ghost');
+				mGhost.innerHTML = mInput.value;
+
+				var mBar = document.getElementById('my_bar');
+				var currentWidth = parseFloat(getComputedStyle(mBar, null).getPropertyValue('width'));
+				var targetWidth = mGhost.offsetWidth;
+				var newWidth = currentWidth + (targetWidth - currentWidth)*.1;
+				newWidth > targetWidth ? targetWidth : newWidth;
+				
+				mBar.style['width'] = newWidth.toString()+'px';
+			};
+			var isAnimating=false;
+		</script>
+	</body>
+</html>
