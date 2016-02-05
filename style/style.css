@@ -129,34 +129,49 @@ a.icon {
 }
 
 a.icon {
-    background-color: #fed;
-    border: 2px solid #fc6;
+    background-color: white;
+    border: 2px solid lightgrey;
     display: inline-block;
     position: relative;
     vertical-align: top;
 }
 a.icon:after,
 a.icon:before {
-    background: #fed;
-    border: 2px solid #fc6;
+    background: white;
+    border: 2px solid lightgrey;
     content: '';
     position: absolute;
 }
-a.icon:hover,
-a.icon:hover:after,
+a.icon:hover{
+	background-color: white;
+    border-top: 2px solid mediumspringgreen;
+    border-left: 2px solid mediumspringgreen;
+    border-right: 2px solid mediumspringgreen;
+    border-bottom: 2px solid mediumspringgreen;
+
+}
+a.icon:hover:after{
+	border-top: 2px solid mediumspringgreen;
+	border-bottom: 2px solid mediumspringgreen;
+}
+
 a.icon:hover:before {
-    background-color: #ffe;
+    background-color: white;
+    border-top: 2px solid mediumspringgreen;
+    border-left: 2px solid mediumspringgreen;
+    border-right: 2px solid mediumspringgreen;
+
 }
 
 a.newDoc {
-    border-top: 2px solid #fc6;
-    box-shadow: inset 0 0 0 2px #fed;
+    border-top: 2px solid lightgrey;
+    box-shadow: inset 0 0 0 2px white;
     height: 15px;
     top: 10px;
     width: 20px;
 }
 a.newDoc:hover {
-    box-shadow: inset 0 0 0 2px #ffe;
+    box-shadow: inset 0 0 0 2px white;
 }
 a.newDoc:after {
     height: 10px;
@@ -172,7 +187,7 @@ a.newDoc:after {
 }
 a.newDoc:before {
     border-bottom: none;
-    border-right: 2px solid #fc6;
+    border-right: 2px solid lightgrey;
     height: 10px;
     left: -2px;
     top: -12px;
